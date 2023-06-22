@@ -6,12 +6,42 @@
     //Se o usuário for "Programador" e trabalhar até 8 horas diárias (inclusive), o programa deverá informar quanto recebe por hora.
     //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
-    //ENTRADA
+    const salario = Number(prompt(`Informe o seu salário`))
+    const cargo = prompt(`Insira o seu cargo (E) para estagiário e (P) para programador `).toUpperCase().trim()
+    const horas = Number(prompt(`Informe quantas horas trabalha por dia`))
 
+    if(cargo === `E`){
+        if(horas <= 6){
+            let horas2 = horas * 20
+            let diaria =  salario / horas2
+            document.write(`Você recebe ${diaria.toFixed(2)} reais por hora`)
+        }
+        else {
+            let horas2 = horas * 20
+            let adicional = salario * 0.50
+            let salario2 = salario + adicional
+            let diaria = salario2 / horas2
+            document.write(`Você recebe ${diaria.toFixed(2)} reais por hora, precisa ser contratado`)
+        }
+    }
+    else if(cargo === `P`){
+        if(horas <= 8){
+            let horas2 = horas * 20
+            let diaria = salario / horas2
+            document.write(`Você recebe ${diaria.toFixed(2)} reais por hora`)
+        }
+        else {
+            let horas2 = horas * 20
+            let adicional = salario * 0.30
+            let salario2 = salario + adicional
+            let diaria = salario2 / horas2
+            document.write(`Você recebe ${diaria.toFixed(2)} reais por hora`)
+        }
 
-    //PROCESSAMENTO
-
-
-    //SAÍDA
+    }
+    else{
+        document.write(`Inválido`)
+    }
+    
 
 </script>

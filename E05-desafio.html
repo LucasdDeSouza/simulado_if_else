@@ -8,13 +8,32 @@
     Apresente em tela as horas e minutos trabalhados e o valor total que o veterinário receberá.
     */
 
-    //ENTRADA
+   const baixa = Number(prompt(`Quantas consultas de baixa complexidade você atende por dia?`))
+   const media = Number(prompt(`Quantas consultas de média complexidade você atende por dia?`))
+   const alta = Number(prompt(`Quantas consultas de alta complexidade você atende por dia?`))
+
+   let horas1 = (baixa * 15) / 60
+   let horas2 = (media * 40) / 60
+   let horas3 = (alta * 70) / 60
+   let horas4 = horas1 + horas2 + horas3
+
+   if(horas4 < 8){
+    let hora = horas4 * 50
+    document.write(`Você trabalhou ${horas4.toFixed(1)} horas, você receberá ${hora.toFixed(2)} reais`)
+   }
+   else if (horas4 <= 10){
+    let hora = horas4 * 75
+    document.write(`Você trabalhou ${horas4.toFixed(1)} horas, você receberá ${hora.toFixed(2)} reais`)
+   }
+   else if (horas4 > 10){
+    let hora = horas4 * 90
+    document.write(`Você trabalhou ${horas4.toFixed(1)} horas, você receberá ${hora.toFixed(2)} reais`)
+   }
+   else{
+    document.write(`Inválido`)
+   }
 
 
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
 
 
 </script>
